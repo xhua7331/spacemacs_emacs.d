@@ -46,7 +46,7 @@ values."
       ;;     git-magit-status-fullscreen t
       ;;     git-variable-example nil)
       markdown
-      org
+      ;; org
      
       ;; (chinese :variables
       ;;          chinese-enable-fcitx t)

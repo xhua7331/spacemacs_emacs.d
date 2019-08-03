@@ -69,3 +69,30 @@
 
 ;; 自动换行
 (setq truncate-lines nil)  
+;; 打开 org-indent mode
+;; (setq org-startup-indented t)
+
+;; 设置 bullet list
+;; (setq org-bullets-bullet-list '("☰" "☷" "☯" "☭"))
+
+;; ;; 设置 todo keywords
+;; (setq org-todo-keywords
+;;       '((sequence "TODO" "HAND" "|" "DONE")))
+;; ;; 调试好久的颜色，效果超赞！todo keywords 增加背景色
+;; (setf org-todo-keyword-faces '(("TODO" . (:foreground "white" :background "#95A5A6"   :weight bold))
+;;                                ("HAND" . (:foreground "white" :background "#2E8B57"  :weight bold))
+;;                                ("DONE" . (:foreground "white" :background "#3498DB" :weight bold))))
+
+;;;;;;;;;;;;;;;;;;;;;set org-capture
+;; 设置全局快捷键, 方便随时使用这个功能
+;;(global-set-key (kbd "C-o c") 'org-capture)
+
+;; 设置 org-agenda 打开快捷键
+;;打开快捷键(global-set-key (kbd "C-c a") 'org-agenda)
+;; rake remember
+(global-set-key (kbd "C-c r") 'org-capture)
+;; 我使用的 Spacemacs , 实际使用的是下面的快捷键
+;; (evil-leader/set-key "oc" 'org-capture)
+
+;; ;; 设置默认情况下, 添加的任务到哪个文件中
+;; (setq org-default-notes-file "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")
