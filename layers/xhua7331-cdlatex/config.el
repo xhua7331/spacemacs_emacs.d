@@ -8,23 +8,23 @@
   (TeX-fold-mode t) ;; 加载TeX fold mode
   (outline-hide-body) ;; 打开文件时只显示章节标题
 
-      (assq-delete-all 'output-pdf TeX-view-program-selection)
-    ;; ;; (assq-delete-all (quote output-pdf) TeX-view-program-selection) 
-      (add-to-list 'TeX-view-program-selection '(output-pdf "Sumatra PDF"))
+    ;;   (assq-delete-all 'output-pdf TeX-view-program-selection)
+    ;; ;; ;; (assq-delete-all (quote output-pdf) TeX-view-program-selection) 
+    ;;   (add-to-list 'TeX-view-program-selection '(output-pdf "Sumatra PDF"))
       )
 
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode)
 ;
+(add-hook 'LaTeX-mode-hook #'outline-minor-mode)
 
-
-;;pdf正向搜索setting
-(setq TeX-PDF-mode t) 
-(setq TeX-source-correlate-start-server t);; 相当关键, pdf调回的成败在此一句 
-(setq TeX-source-correlate-mode t) 
-(setq TeX-source-correlate-method 'synctex)
-(setq TeX-view-program-list 
-      '(("Sumatra PDF" ("\"C:/Program Files/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n ") " %o")))) 
-;
+;; ;;pdf正向搜索setting
+;; (setq TeX-PDF-mode t) 
+;; (setq TeX-source-correlate-start-server t);; 相当关键, pdf调回的成败在此一句 
+;; (setq TeX-source-correlate-mode t) 
+;; (setq TeX-source-correlate-method 'synctex)
+;; (setq TeX-view-program-list 
+;;       '(("Sumatra PDF" ("\"C:/Program Files/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n ") " %o")))) 
+;; ;
 ;; (add-hook 'LaTeX-mode-hook
 ;; (lambda ()
 ;;   (assq-delete-all 'output-pdf TeX-view-program-selection)

@@ -88,7 +88,8 @@
 ;;(global-set-key (kbd "C-o c") 'org-capture)
 
 ;; 设置 org-agenda 打开快捷键
-;;打开快捷键(global-set-key (kbd "C-c a") 'org-agenda)
+;;打开快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
 ;; rake remember
 (global-set-key (kbd "C-c r") 'org-capture)
 ;; 我使用的 Spacemacs , 实际使用的是下面的快捷键
@@ -96,3 +97,10 @@
 
 ;; ;; 设置默认情况下, 添加的任务到哪个文件中
 ;; (setq org-default-notes-file "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")
+;;org-mode 对代码块进行高亮
+(setq org-src-fontify-natively t)
+;; 自动换行
+;; (global-visual-line-mode 1) ; 1 for on, 0 for off.
+;; visual-line-mode
+;; global-visual-line-mode
+;; truncate-lines

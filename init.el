@@ -59,6 +59,7 @@ values."
       xhua7331-betterdefaults
       xhua7331-org
       (latex :variables latex-build-command "XeLaTeX") 
+      python 
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -323,10 +324,12 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+ ;;set source
 (setq configuration-layer--elpa-archives
       '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
 	("org-cn"   . "http://elpa.zilongshanren.com/org/")
 	("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+
 ;;let the startup program quickly
 (setq tramp-ssh-controlmaster-options
       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
@@ -357,26 +360,26 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;;                     (font-spec :family "楷体-简" :size 20)))
   ;; 解决显示Unicode字符的卡顿问题
   (setq inhibit-compacting-font-caches t)  
-;;   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;   (defun my-LaTeX-mode()
-;;     ;; (add-to-list 'TeX-view-program-list '("SumatraPDF" "SumatraPDF %o")) 
-;;     ;; 以下两行是正向搜索相关设置
-;;     (setq TeX-save-query nil) ;;save the modified file when compiling
-;;     (assq-delete-all 'output-pdf TeX-view-program-selection)
-;;     ;; (assq-delete-all (quote output-pdf) TeX-view-program-selection) 
-;;     (add-to-list 'TeX-view-program-selection '(output-pdf "Sumatra PDF"))
-;;     ;; (cdlatex-mode t) ;; 好像不用这一行即可启用cdlatex-mode
-;;     )
-;;   (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (defun my-LaTeX-mode()
+    ;; (add-to-list 'TeX-view-program-list '("SumatraPDF" "SumatraPDF %o")) 
+    ;; 以下两行是正向搜索相关设置
+    (setq TeX-save-query nil) ;;save the modified file when compiling
+    (assq-delete-all 'output-pdf TeX-view-program-selection)
+    ;; (assq-delete-all (quote output-pdf) TeX-view-program-selection) 
+    (add-to-list 'TeX-view-program-selection '(output-pdf "Sumatra PDF"))
+    ;; (cdlatex-mode t) ;; 好像不用这一行即可启用cdlatex-mode
+    )
+  (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode)
 
-;;   ;; PDF正向搜索相关设置
-;;   (setq TeX-PDF-mode t) 
-;;   (setq TeX-source-correlate-start-server t)
-;;   (setq TeX-source-correlate-mode t) 
-;;   (setq TeX-source-correlate-method 'synctex) 
-;;   (setq TeX-view-program-list 
-;;         '(("Sumatra PDF" ("\"C:/Program Files/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n ") " %o"))))
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; PDF正向搜索相关设置
+  (setq TeX-PDF-mode t) 
+  (setq TeX-source-correlate-start-server t)
+  (setq TeX-source-correlate-mode t) 
+  (setq TeX-source-correlate-method 'synctex) 
+  (setq TeX-view-program-list 
+        '(("Sumatra PDF" ("\"C:/Program Files/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n ") " %o"))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   )
 
