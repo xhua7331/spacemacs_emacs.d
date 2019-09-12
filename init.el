@@ -54,7 +54,11 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
       xhua7331-cdlatex 
-      spell-checking
+      (spell-checking :variables
+                      ispell-program-name "aspell"
+                      ;; ispell-dictionary "american"
+                      spell-checking-enable-by-default nil)
+      ;; (spell-checking :variables spell-checking-enable-by-default nil)
       syntax-checking
       xhua7331-betterdefaults
       xhua7331-org

@@ -76,3 +76,11 @@
 ;;         ))
 
 ;; (yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
+
+;; Aspell setting
+;; aspell程序的目录到emacs的exec-path中
+;; (add-to-list 'exec-path "D:/A_software/com_usepage/Aspell/bin")
+;; 我们还需要告诉emacs使用aspell作为拼写检查的检查程序和你的字典目录
+
+(setq ispell-program-name "aspell")
+;; (setq ispell-personal-dictionary "C:/path/to/your/.ispell")
